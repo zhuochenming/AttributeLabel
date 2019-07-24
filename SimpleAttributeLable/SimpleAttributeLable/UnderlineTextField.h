@@ -8,14 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSUInteger, UnderlineTextFieldState) {
-    UnderlineTextFieldStateNormal,
-    UnderlineTextFieldStateCorrect,
-    UnderlineTextFieldStateError,
+typedef NS_ENUM(NSUInteger, kUnderlineTextFieldState) {
+    kUnderlineTextFieldStateNormal,
+    kUnderlineTextFieldStateCorrect,
+    kUnderlineTextFieldStateError,
 };
 
 @interface UnderlineTextField : UITextField
 
-@property (nonatomic, assign) UnderlineTextFieldState textFieldState;
+@property (nonatomic, assign) kUnderlineTextFieldState textFieldState;
 
 @end

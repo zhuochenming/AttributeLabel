@@ -20,16 +20,16 @@
 
 @property (nonatomic, assign) CGSize size;
 
-@property (nonatomic, assign) ImageVerticalAlignment vAlignment;
+@property (nonatomic, assign) kImageVerticalAlignment vAlignment;
 
 //水平方式对齐方式 （默认居中，此时margin在水平方向的值无效）
-@property (nonatomic, assign) ImageHorizontalAlignment hAlignment;
+@property (nonatomic, assign) kImageHorizontalAlignment hAlignment;
 
 @property (nonatomic, assign) CGFloat fontAscent;
 
 @property (nonatomic, assign) CGFloat fontDescent;
 
-+ (ContainerHandle *)container:(id)content size:(CGSize)size margin:(UIEdgeInsets)margin alignment:(ImageVerticalAlignment)alignment;
++ (ContainerHandle *)container:(id)content size:(CGSize)size margin:(UIEdgeInsets)margin alignment:(kImageVerticalAlignment)alignment;
 
 - (CGSize)containerSize;
 

@@ -11,12 +11,15 @@
 
 @interface NSMutableAttributedString (CoreText)
 
+/** 改变文本的颜色 */
 - (void)kCTTextColor:(UIColor *)color;
 - (void)kCTTextColor:(UIColor *)color range:(NSRange)range;
 
+/** 改变文本的字体 */
 - (void)kCTFont:(UIFont *)font;
 - (void)kCTFont:(UIFont *)font range:(NSRange)range;
 
+/** 改变文本的下划线 */
 - (void)kCTUnderlineStyle:(CTUnderlineStyle)style modifier:(CTUnderlineStyleModifiers)modifier;
 - (void)kCTUnderlineStyle:(CTUnderlineStyle)style modifier:(CTUnderlineStyleModifiers)modifier range:(NSRange)range;
 

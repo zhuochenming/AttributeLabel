@@ -11,7 +11,7 @@
 
 @implementation ContainerHandle
 
-+ (ContainerHandle *)container:(id)content size:(CGSize)size margin:(UIEdgeInsets)margin alignment:(ImageVerticalAlignment)alignment {
++ (ContainerHandle *)container:(id)content size:(CGSize)size margin:(UIEdgeInsets)margin alignment:(kImageVerticalAlignment)alignment {
     ContainerHandle *container = [[ContainerHandle alloc] init];
     container.containerType = content;
     container.margin = margin;
@@ -59,17 +59,17 @@ CGFloat ascentCallback(void *ref) {
     CGFloat ascent = 0;
     CGFloat height = [container containerSize].height;
     switch (container.vAlignment) {
-        case ImageVerticalAlignmentTop:
+        case kImageVerticalAlignmentTop:
             ascent = container.fontAscent;
             break;
-        case ImageVerticalAlignmentCenter: {
+        case kImageVerticalAlignmentCenter: {
             CGFloat fontAscent  = container.fontAscent;
             CGFloat fontDescent = container.fontDescent;
             CGFloat baseLine = (fontAscent + fontDescent) / 2 - fontDescent;
             ascent = height / 2 + baseLine;
         }
             break;
-        case ImageVerticalAlignmentBottom:
+        case kImageVerticalAlignmentBottom:
             ascent = height - container.fontDescent;
             break;
         default:
@@ -83,18 +83,18 @@ CGFloat descentCallback(void *ref) {
     CGFloat descent = 0;
     CGFloat height = [container containerSize].height;
     switch (container.vAlignment) {
-        case ImageVerticalAlignmentTop: {
+        case kImageVerticalAlignmentTop: {
             descent = height - container.fontAscent;
             break;
         }
-        case ImageVerticalAlignmentCenter: {
+        case kImageVerticalAlignmentCenter: {
             CGFloat fontAscent = container.fontAscent;
             CGFloat fontDescent = container.fontDescent;
             CGFloat baseLine = (fontAscent + fontDescent) / 2 - fontDescent;
             descent = height / 2 - baseLine;
         }
             break;
-        case ImageVerticalAlignmentBottom: {
+        case kImageVerticalAlignmentBottom: {
             descent = container.fontDescent;
             break;
         }

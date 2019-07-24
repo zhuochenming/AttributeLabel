@@ -97,7 +97,7 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() {
 
 #pragma mark - getter方法
 - (NSString *)text {
-    return [_attributedString string];
+    return _attributedString.string;
 }
 
 - (NSAttributedString *)attributedText {
@@ -219,7 +219,6 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() {
     if (_attributedString) {
         //添加排版格式
         NSMutableAttributedString *drawString = [_attributedString mutableCopy];
-        
         //如果LineBreakMode为TranncateTail,那么默认排版模式改成kCTLineBreakByCharWrapping,使得尽可能地显示所有文字
         CTLineBreakMode lineBreakMode = self.lineBreakMode;
         if (self.lineBreakMode == kCTLineBreakByTruncatingTail) {
@@ -383,10 +382,10 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() {
 }
 
 - (void)appendImage:(UIImage *)image size:(CGSize)size margin:(UIEdgeInsets)margin {
-    [self appendImage:image size:size margin:margin alignment:ImageVerticalAlignmentBottom];
+    [self appendImage:image size:size margin:margin alignment:kImageVerticalAlignmentBottom];
 }
 
-- (void)appendImage:(UIImage *)image size:(CGSize)size margin:(UIEdgeInsets)margin alignment:(ImageVerticalAlignment)alignment {
+- (void)appendImage:(UIImage *)image size:(CGSize)size margin:(UIEdgeInsets)margin alignment:(kImageVerticalAlignment)alignment {
     ContainerHandle *container = [ContainerHandle container:image size:size margin:margin alignment:alignment];
     [self appendContainer:container];
 }
@@ -397,10 +396,10 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() {
 }
 
 - (void)appendView:(UIView *)view margin:(UIEdgeInsets)margin {
-    [self appendView:view margin:margin alignment:ImageVerticalAlignmentBottom];
+    [self appendView:view margin:margin alignment:kImageVerticalAlignmentBottom];
 }
 
-- (void)appendView:(UIView *)view margin:(UIEdgeInsets)margin alignment:(ImageVerticalAlignment)alignment {
+- (void)appendView:(UIView *)view margin:(UIEdgeInsets)margin alignment:(kImageVerticalAlignment)alignment {
     ContainerHandle *container = [ContainerHandle container:view size:CGSizeZero margin:margin alignment:alignment];
     [self appendContainer:container];
 }
@@ -651,13 +650,13 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() {
             
             CGFloat imageBoxOriginY = 0.0f;
             switch (container.vAlignment) {
-                case ImageVerticalAlignmentTop:
+                case kImageVerticalAlignmentTop:
                     imageBoxOriginY = lineBottomY + (lineHeight - imageBoxHeight);
                     break;
-                case ImageVerticalAlignmentCenter:
+                case kImageVerticalAlignmentCenter:
                     imageBoxOriginY = lineBottomY + (lineHeight - imageBoxHeight) / 2.0;
                     break;
-                case ImageVerticalAlignmentBottom:
+                case kImageVerticalAlignmentBottom:
                     imageBoxOriginY = lineBottomY;
                     break;
             }
@@ -687,13 +686,13 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() {
             
             if ([content isKindOfClass:[UIImage class]]) {
                 switch (container.hAlignment) {
-                    case ImageHorizontalAlignmentCenter:
+                    case kImageHorizontalAlignmentCenter:
                         containerRect.origin.x = (viewWidth - containerWidth) / 2.0;
                         break;
-                    case ImageHorizontalAlignmentLeft:
+                    case kImageHorizontalAlignmentLeft:
                         
                         break;
-                    case ImageHorizontalAlignmentRight:
+                    case kImageHorizontalAlignmentRight:
                         containerRect.origin.x = viewWidth - containerWidth;
                         break;
                     default:
@@ -756,7 +755,7 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() {
     if (length <= kMinHttpLinkLength) {
         return;
     }
-    BOOL sync = length <= M80MinAsyncDetectLinkLength;
+    BOOL sync = length <= kM80MinAsyncDetectLinkLength;
     [self computeLink:text sync:sync];
 }
 
@@ -811,7 +810,6 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() {
             CGRect rect = CGRectFromString(rectString);
             BOOL contains = CGRectContainsPoint(rect, point);
             if (contains) {
-                
                 BOOL isResonseImageTap = NO;
                 
                 if ([self.delegate respondsToSelector:@selector(clickOnImage:)]) {

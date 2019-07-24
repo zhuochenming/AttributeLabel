@@ -57,28 +57,23 @@
 
 //添加文本
 - (void)appendText:(NSString *)text;
-
 - (void)appendAttributedText:(NSAttributedString *)attributedText;
 
 //图片
 - (void)appendImage:(UIImage *)image size:(CGSize)size;
-
 - (void)appendImage:(UIImage *)image size:(CGSize)size margin:(UIEdgeInsets)margin;
-
-- (void)appendImage:(UIImage*)image size:(CGSize)size margin:(UIEdgeInsets)margin alignment:(ImageVerticalAlignment)alignment;
+- (void)appendImage:(UIImage*)image size:(CGSize)size margin:(UIEdgeInsets)margin alignment:(kImageVerticalAlignment)alignment;
 
 //UI控件
 - (void)appendView:(UIView *)view;
-
 - (void)appendView:(UIView *)view margin:(UIEdgeInsets)margin;
-
-- (void)appendView:(UIView *)view margin:(UIEdgeInsets)margin alignment:(ImageVerticalAlignment)alignment;
+- (void)appendView:(UIView *)view margin:(UIEdgeInsets)margin alignment:(kImageVerticalAlignment)alignment;
 
 //添加自定义链接
 - (void)addCustomLink:(id)linkData forRange:(NSRange)range;
-
 - (void)addCustomLink:(id)linkData forRange:(NSRange)range linkColor:(UIColor *)color;
 
+//获取富文本的高度
 - (CGFloat)getHeightWithWidth:(CGFloat)width;
 
 //设置全局的自定义Link检测Block(详见AttributedLabelURL)
