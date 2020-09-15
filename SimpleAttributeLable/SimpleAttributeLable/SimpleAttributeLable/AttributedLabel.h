@@ -46,6 +46,8 @@
 
 @property (nonatomic, assign) BOOL autoDetectLinks;     //自动检测
 
+@property (nonatomic, assign) CGFloat labelHeight;      //更新label高度
+
 @property (nonatomic, assign) NSInteger numberOfLines;  //行数
 
 @property (nonatomic, assign) CTTextAlignment textAlignment;    //文字排版样式
@@ -54,6 +56,9 @@
 @property (nonatomic, assign) CGFloat paragraphSpacing;         //段间距
 
 @property (nonatomic, strong, readonly) NSArray *viewArray;
+
+//设置全局的自定义Link检测Block(详见AttributedLabelURL)
++ (void)setCustomDetectMethod:(zCustomDetectLinkBlock)block;
 
 //添加文本
 - (void)appendText:(NSString *)text;
@@ -75,8 +80,5 @@
 
 //获取富文本的高度
 - (CGFloat)getHeightWithWidth:(CGFloat)width;
-
-//设置全局的自定义Link检测Block(详见AttributedLabelURL)
-+ (void)setCustomDetectMethod:(zCustomDetectLinkBlock)block;
 
 @end

@@ -169,6 +169,12 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() {
     }
 }
 
+- (void)setLabelHeight:(CGFloat)labelHeight {
+    CGRect rect = self.frame;
+    rect.size.height = labelHeight;
+    self.frame = rect;
+}
+
 - (void)setBounds:(CGRect)bounds {
     CGRect oldRect = self.bounds;
     [super setBounds:bounds];
@@ -720,6 +726,10 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() {
             }
         }
     }
+}
+
+- (void)resetFrameRef {
+    [self cleanAll];
 }
 
 #pragma mark - 点击事件处理

@@ -125,11 +125,11 @@
 			children = (
 				4FFD183B1D1BB00F006CE188 /* AppDelegate.h */,
 				4FFD183C1D1BB00F006CE188 /* AppDelegate.m */,
+				4F79E4FC1D226DC7002FFD99 /* hot.png */,
 				4FFD18801D1BB0AA006CE188 /* ImagesViewController.h */,
 				4FFD18811D1BB0AA006CE188 /* ImagesViewController.m */,
 				4FFD187D1D1BB0A3006CE188 /* UnderlineTextField.h */,
 				4FFD187E1D1BB0A3006CE188 /* UnderlineTextField.m */,
-				4F79E4FC1D226DC7002FFD99 /* hot.png */,
 				4FFD186F1D1BB08C006CE188 /* SimpleAttributeLable */,
 				4FFD18441D1BB00F006CE188 /* Main.storyboard */,
 				4FFD18471D1BB00F006CE188 /* Assets.xcassets */,
