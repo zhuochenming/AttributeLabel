@@ -1,12 +1,12 @@
 //
-//  AttributedLabel.m
-//  AttributedLabel
+//  CTView.m
+//  CTView
 //
 //  Created by Zhuochenming on 16/6/20.
 //  Copyright © 2016年 Zhuochenming. All rights reserved.
 //
 
-#import "AttributedLabel.h"
+#import "CTView.h"
 
 static NSString * const kEllipsesCharacter = @"\u2026";
 
@@ -19,7 +19,7 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() {
     return m80_attributed_label_parse_queue;
 }
 
-@interface AttributedLabel ()
+@interface CTView ()
 
 //容器数组
 @property (nonatomic, strong) NSMutableArray *containerArray;
@@ -49,20 +49,18 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() {
 
 @end
 
-@implementation AttributedLabel
+@implementation CTView
 
 #pragma mark - 初始化
 - (id)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-    if (self) {
+    if (self = [super initWithFrame:frame]) {
         [self configurationProperty];
     }
     return self;
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
-    self = [super initWithCoder:aDecoder];
-    if (self) {
+    if (self = [super initWithCoder:aDecoder]) {
         [self configurationProperty];
     }
     return self;
@@ -89,7 +87,7 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() {
         self.backgroundColor = [UIColor whiteColor];
     }
     
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(attributedLabelTap:)];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTap:)];
     [self addGestureRecognizer:tap];
     self.userInteractionEnabled = YES;
     [self resetFont];
@@ -169,9 +167,9 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() {
     }
 }
 
-- (void)setLabelHeight:(CGFloat)labelHeight {
+- (void)setViewHeight:(CGFloat)viewHeight {
     CGRect rect = self.frame;
-    rect.size.height = labelHeight;
+    rect.size.height = viewHeight;
     self.frame = rect;
 }
 
@@ -260,8 +258,8 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() {
 }
 
 - (LinkTextHandle *)urlForPoint:(CGPoint)point {
-    static const CGFloat kVMargin = 5;
-    if (!CGRectContainsPoint(CGRectInset(self.bounds, 0, -kVMargin), point) || _frameRef == nil) {
+    static const CGFloat kVedge = 5;
+    if (!CGRectContainsPoint(CGRectInset(self.bounds, 0, -kVedge), point) || _frameRef == nil) {
         return nil;
     }
     
@@ -285,7 +283,7 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() {
         CGRect flippedRect = [self getLineBounds:line point:linePoint];
         CGRect rect = CGRectApplyAffineTransform(flippedRect, transform);
         
-        rect = CGRectInset(rect, 0, -kVMargin);
+        rect = CGRectInset(rect, 0, -kVedge);
         rect = CGRectOffset(rect, 0, verticalOffset);
         
         if (CGRectContainsPoint(rect, point)) {
@@ -384,38 +382,38 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() {
 
 #pragma mark - 添加图片
 - (void)appendImage:(UIImage *)image size:(CGSize)size {
-    [self appendImage:image size:size margin:UIEdgeInsetsZero];
+    [self appendImage:image size:size edge:UIEdgeInsetsZero];
 }
 
-- (void)appendImage:(UIImage *)image size:(CGSize)size margin:(UIEdgeInsets)margin {
-    [self appendImage:image size:size margin:margin alignment:kImageVerticalAlignmentBottom];
+- (void)appendImage:(UIImage *)image size:(CGSize)size edge:(UIEdgeInsets)edge {
+    [self appendImage:image size:size edge:edge alignment:kImageVerticalAlignmentBottom];
 }
 
-- (void)appendImage:(UIImage *)image size:(CGSize)size margin:(UIEdgeInsets)margin alignment:(kImageVerticalAlignment)alignment {
-    ContainerHandle *container = [ContainerHandle container:image size:size margin:margin alignment:alignment];
+- (void)appendImage:(UIImage *)image size:(CGSize)size edge:(UIEdgeInsets)edge alignment:(kImageVerticalAlignment)alignment {
+    ContainerHandle *container = [ContainerHandle container:image size:size edge:edge alignment:alignment];
     [self appendContainer:container];
 }
 
 #pragma mark - 添加UI控件
 - (void)appendView:(UIView *)view {
-    [self appendView:view margin:UIEdgeInsetsZero];
+    [self appendView:view edge:UIEdgeInsetsZero];
 }
 
-- (void)appendView:(UIView *)view margin:(UIEdgeInsets)margin {
-    [self appendView:view margin:margin alignment:kImageVerticalAlignmentBottom];
+- (void)appendView:(UIView *)view edge:(UIEdgeInsets)edge {
+    [self appendView:view edge:edge alignment:kImageVerticalAlignmentBottom];
 }
 
-- (void)appendView:(UIView *)view margin:(UIEdgeInsets)margin alignment:(kImageVerticalAlignment)alignment {
-    ContainerHandle *container = [ContainerHandle container:view size:CGSizeZero margin:margin alignment:alignment];
+- (void)appendView:(UIView *)view edge:(UIEdgeInsets)edge alignment:(kImageVerticalAlignment)alignment {
+    ContainerHandle *container = [ContainerHandle container:view size:CGSizeZero edge:edge alignment:alignment];
     [self appendContainer:container];
 }
 
 #pragma mark - 添加链接
-- (void)addCustomLink:(id)linkData forRange:(NSRange)range {
-    [self addCustomLink:linkData forRange:range linkColor:self.linkColor];
+- (void)addCustomLink:(id)linkData range:(NSRange)range {
+    [self addCustomLink:linkData range:range linkColor:self.linkColor];
 }
 
-- (void)addCustomLink:(id)linkData forRange:(NSRange)range linkColor:(UIColor *)color {
+- (void)addCustomLink:(id)linkData range:(NSRange)range linkColor:(UIColor *)color {
     LinkTextHandle *linkText = [LinkTextHandle urlWithLinkData:linkData range:range color:color];
     [_linkTextArray addObject:linkText];
     [self resetTextFrame];
@@ -668,12 +666,12 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() {
             }
             
             CGRect rect = CGRectMake(lineOrigin.x + xOffset, imageBoxOriginY, width, imageBoxHeight);
-            UIEdgeInsets flippedMargins = container.margin;
-            CGFloat top = flippedMargins.top;
-            flippedMargins.top = flippedMargins.bottom;
-            flippedMargins.bottom = top;
+            UIEdgeInsets flippededges = container.edge;
+            CGFloat top = flippededges.top;
+            flippededges.top = flippededges.bottom;
+            flippededges.bottom = top;
             
-            CGRect attatchmentRect = UIEdgeInsetsInsetRect(rect, flippedMargins);
+            CGRect attatchmentRect = UIEdgeInsetsInsetRect(rect, flippededges);
             
             if (i == numberOfLines - 1 && k >= runCount - 2 && _lineBreakMode == kCTLineBreakByTruncatingTail) {
                 //最后行最后的2个CTRun需要做额外判断
@@ -736,8 +734,8 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() {
 - (BOOL)onLabelClick:(CGPoint)point {
     id linkData = [self linkDataForPoint:point];
     if (linkData) {
-        if (_delegate && [_delegate respondsToSelector:@selector(AttributedLabel:clickedOnLink:)]) {
-            [_delegate AttributedLabel:self clickedOnLink:linkData];
+        if (_delegate && [_delegate respondsToSelector:@selector(view:tapLink:)]) {
+            [_delegate view:self tapLink:linkData];
         } else {
             NSURL *url = nil;
             if ([linkData isKindOfClass:[NSString class]]) {
@@ -808,36 +806,38 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() {
             return;
         }
     }
-    [self addCustomLink:link.linkData forRange:link.range];
+    [self addCustomLink:link.linkData range:link.range];
 }
 
 #pragma mark - 点击事件相应
-- (void)attributedLabelTap:(UITapGestureRecognizer *)tap {
+- (void)viewTap:(UITapGestureRecognizer *)tap {
     CGPoint point = [tap locationInView:self];
     LinkTextHandle *linkText = [self urlForPoint:point];
-    if (linkText == nil) {
-        for (NSString *rectString in _imageRectDic.allKeys) {
-            CGRect rect = CGRectFromString(rectString);
-            BOOL contains = CGRectContainsPoint(rect, point);
-            if (contains) {
-                BOOL isResonseImageTap = NO;
-                
-                if ([self.delegate respondsToSelector:@selector(clickOnImage:)]) {
-                    for (ContainerHandle *container in _containerArray) {
-                        if (container.tag == [_imageRectDic[rectString] integerValue] && [container.containerType isKindOfClass:[UIImage class]]) {
-                            [self.delegate clickOnImage:(UIImage *)container.containerType];
-                            isResonseImageTap = YES;
-                            break;
-                        }
+    if (linkText != nil) {
+        return;
+    }
+    
+    for (NSString *rectString in _imageRectDic.allKeys) {
+        CGRect rect = CGRectFromString(rectString);
+        BOOL contains = CGRectContainsPoint(rect, point);
+        if (contains) {
+            BOOL isResonseImageTap = NO;
+            
+            if ([self.delegate respondsToSelector:@selector(tapImage:)]) {
+                for (ContainerHandle *container in _containerArray) {
+                    if (container.tag == [_imageRectDic[rectString] integerValue] && [container.containerType isKindOfClass:[UIImage class]]) {
+                        [self.delegate tapImage:(UIImage *)container.containerType];
+                        isResonseImageTap = YES;
+                        break;
                     }
                 }
-                if (!isResonseImageTap) {
-                    if ([self.delegate respondsToSelector:@selector(clickOnView:)]) {
-                        for (ContainerHandle *container in _containerArray) {
-                            if (container.tag == [_imageRectDic[rectString] integerValue] && [container.containerType isKindOfClass:[UIView class]]) {
-                                [self.delegate clickOnView:container.containerType];
-                                break;
-                            }
+            }
+            if (!isResonseImageTap) {
+                if ([self.delegate respondsToSelector:@selector(tapView:)]) {
+                    for (ContainerHandle *container in _containerArray) {
+                        if (container.tag == [_imageRectDic[rectString] integerValue] && [container.containerType isKindOfClass:[UIView class]]) {
+                            [self.delegate tapView:container.containerType];
+                            break;
                         }
                     }
                 }

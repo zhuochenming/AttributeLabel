@@ -15,7 +15,7 @@
 		4FFD184B1D1BB00F006CE188 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FFD18491D1BB00F006CE188 /* LaunchScreen.storyboard */; };
 		4FFD18561D1BB00F006CE188 /* SimpleAttributeLableTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD18551D1BB00F006CE188 /* SimpleAttributeLableTests.m */; };
 		4FFD18611D1BB00F006CE188 /* SimpleAttributeLableUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD18601D1BB00F006CE188 /* SimpleAttributeLableUITests.m */; };
-		4FFD18791D1BB09C006CE188 /* AttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD18711D1BB09C006CE188 /* AttributedLabel.m */; };
+		4FFD18791D1BB09C006CE188 /* CTView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD18711D1BB09C006CE188 /* CTView.m */; };
 		4FFD187A1D1BB09C006CE188 /* ContainerHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD18731D1BB09C006CE188 /* ContainerHandle.m */; };
 		4FFD187B1D1BB09C006CE188 /* LinkTextHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD18751D1BB09C006CE188 /* LinkTextHandle.m */; };
 		4FFD187C1D1BB09C006CE188 /* NSMutableAttributedString+CoreText.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD18771D1BB09C006CE188 /* NSMutableAttributedString+CoreText.m */; };
@@ -57,15 +57,15 @@
 		4FFD185C1D1BB00F006CE188 /* SimpleAttributeLableUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleAttributeLableUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FFD18601D1BB00F006CE188 /* SimpleAttributeLableUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleAttributeLableUITests.m; sourceTree = "<group>"; };
 		4FFD18621D1BB00F006CE188 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4FFD18701D1BB09C006CE188 /* AttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributedLabel.h; sourceTree = "<group>"; };
-		4FFD18711D1BB09C006CE188 /* AttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributedLabel.m; sourceTree = "<group>"; };
+		4FFD18701D1BB09C006CE188 /* CTView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTView.h; sourceTree = "<group>"; };
+		4FFD18711D1BB09C006CE188 /* CTView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTView.m; sourceTree = "<group>"; };
 		4FFD18721D1BB09C006CE188 /* ContainerHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerHandle.h; sourceTree = "<group>"; };
 		4FFD18731D1BB09C006CE188 /* ContainerHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerHandle.m; sourceTree = "<group>"; };
 		4FFD18741D1BB09C006CE188 /* LinkTextHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkTextHandle.h; sourceTree = "<group>"; };
 		4FFD18751D1BB09C006CE188 /* LinkTextHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkTextHandle.m; sourceTree = "<group>"; };
 		4FFD18761D1BB09C006CE188 /* NSMutableAttributedString+CoreText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+CoreText.h"; sourceTree = "<group>"; };
 		4FFD18771D1BB09C006CE188 /* NSMutableAttributedString+CoreText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+CoreText.m"; sourceTree = "<group>"; };
-		4FFD18781D1BB09C006CE188 /* RichTextProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RichTextProtocol.h; sourceTree = "<group>"; };
+		4FFD18781D1BB09C006CE188 /* CTViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTViewProtocol.h; sourceTree = "<group>"; };
 		4FFD187D1D1BB0A3006CE188 /* UnderlineTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnderlineTextField.h; sourceTree = "<group>"; };
 		4FFD187E1D1BB0A3006CE188 /* UnderlineTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnderlineTextField.m; sourceTree = "<group>"; };
 		4FFD18801D1BB0AA006CE188 /* ImagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagesViewController.h; sourceTree = "<group>"; };
@@ -130,7 +130,7 @@
 				4FFD18811D1BB0AA006CE188 /* ImagesViewController.m */,
 				4FFD187D1D1BB0A3006CE188 /* UnderlineTextField.h */,
 				4FFD187E1D1BB0A3006CE188 /* UnderlineTextField.m */,
-				4FFD186F1D1BB08C006CE188 /* SimpleAttributeLable */,
+				4FFD186F1D1BB08C006CE188 /* CTView */,
 				4FFD18441D1BB00F006CE188 /* Main.storyboard */,
 				4FFD18471D1BB00F006CE188 /* Assets.xcassets */,
 				4FFD18491D1BB00F006CE188 /* LaunchScreen.storyboard */,
@@ -166,12 +166,12 @@
 			path = SimpleAttributeLableUITests;
 			sourceTree = "<group>";
 		};
-		4FFD186F1D1BB08C006CE188 /* SimpleAttributeLable */ = {
+		4FFD186F1D1BB08C006CE188 /* CTView */ = {
 			isa = PBXGroup;
 			children = (
-				4FFD18781D1BB09C006CE188 /* RichTextProtocol.h */,
-				4FFD18701D1BB09C006CE188 /* AttributedLabel.h */,
-				4FFD18711D1BB09C006CE188 /* AttributedLabel.m */,
+				4FFD18781D1BB09C006CE188 /* CTViewProtocol.h */,
+				4FFD18701D1BB09C006CE188 /* CTView.h */,
+				4FFD18711D1BB09C006CE188 /* CTView.m */,
 				4FFD18721D1BB09C006CE188 /* ContainerHandle.h */,
 				4FFD18731D1BB09C006CE188 /* ContainerHandle.m */,
 				4FFD18741D1BB09C006CE188 /* LinkTextHandle.h */,
@@ -179,7 +179,7 @@
 				4FFD18761D1BB09C006CE188 /* NSMutableAttributedString+CoreText.h */,
 				4FFD18771D1BB09C006CE188 /* NSMutableAttributedString+CoreText.m */,
 			);
-			path = SimpleAttributeLable;
+			path = CTView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,7 +244,7 @@
 		4FFD182D1D1BB00F006CE188 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1210;
 				ORGANIZATIONNAME = zhuochenming;
 				TargetAttributes = {
 					4FFD18341D1BB00F006CE188 = {
@@ -315,7 +315,7 @@
 			files = (
 				4FFD187C1D1BB09C006CE188 /* NSMutableAttributedString+CoreText.m in Sources */,
 				4FFD183D1D1BB00F006CE188 /* AppDelegate.m in Sources */,
-				4FFD18791D1BB09C006CE188 /* AttributedLabel.m in Sources */,
+				4FFD18791D1BB09C006CE188 /* CTView.m in Sources */,
 				4FFD183A1D1BB00F006CE188 /* main.m in Sources */,
 				4FFD187F1D1BB0A3006CE188 /* UnderlineTextField.m in Sources */,
 				4FFD187B1D1BB09C006CE188 /* LinkTextHandle.m in Sources */,
@@ -398,6 +398,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -422,7 +423,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -452,6 +453,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -470,7 +472,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

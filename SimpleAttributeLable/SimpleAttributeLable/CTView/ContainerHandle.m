@@ -1,6 +1,6 @@
 //
 //  ContainerHandle.m
-//  AttributedLabel
+//  CTView
 //
 //  Created by Zhuochenming on 16/6/20.
 //  Copyright © 2016年 Zhuochenming. All rights reserved.
@@ -11,10 +11,10 @@
 
 @implementation ContainerHandle
 
-+ (ContainerHandle *)container:(id)content size:(CGSize)size margin:(UIEdgeInsets)margin alignment:(kImageVerticalAlignment)alignment {
++ (ContainerHandle *)container:(id)content size:(CGSize)size edge:(UIEdgeInsets)edge alignment:(kImageVerticalAlignment)alignment {
     ContainerHandle *container = [[ContainerHandle alloc] init];
     container.containerType = content;
-    container.margin = margin;
+    container.edge = edge;
     container.size = size;
     container.vAlignment = alignment;
     return container;
@@ -25,11 +25,11 @@
     if ([_containerType isKindOfClass:[UIImage class]]) {
         UIImage *image = _containerType;
         contentSize = image.size;
-        return CGSizeMake(self.size.width + _margin.left + _margin.right, self.size.height + _margin.top  + _margin.bottom);
+        return CGSizeMake(self.size.width + _edge.left + _edge.right, self.size.height + _edge.top  + _edge.bottom);
     } else if ([_containerType isKindOfClass:[UIView class]]) {
         UIView *view = _containerType;
         contentSize = view.bounds.size;
-        return CGSizeMake(contentSize.width + _margin.left + _margin.right, contentSize.height + _margin.top  + _margin.bottom);
+        return CGSizeMake(contentSize.width + _edge.left + _edge.right, contentSize.height + _edge.top  + _edge.bottom);
     }
     return CGSizeZero;
 }
