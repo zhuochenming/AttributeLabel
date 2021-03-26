@@ -1,12 +1,12 @@
 //
-//  CTView.m
-//  CTView
+//  AttributeLabel.m
+//  AttributeLabel
 //
 //  Created by Zhuochenming on 16/6/20.
 //  Copyright © 2016年 Zhuochenming. All rights reserved.
 //
 
-#import "CTView.h"
+#import "AttributeLabel.h"
 
 static NSString * const kEllipsesCharacter = @"\u2026";
 
@@ -19,7 +19,7 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() {
     return m80_attributed_label_parse_queue;
 }
 
-@interface CTView ()
+@interface AttributeLabel ()
 
 //容器数组
 @property (nonatomic, strong) NSMutableArray *containerArray;
@@ -49,7 +49,7 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() {
 
 @end
 
-@implementation CTView
+@implementation AttributeLabel
 
 #pragma mark - 初始化
 - (id)initWithFrame:(CGRect)frame {
@@ -734,8 +734,8 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() {
 - (BOOL)onLabelClick:(CGPoint)point {
     id linkData = [self linkDataForPoint:point];
     if (linkData) {
-        if (_delegate && [_delegate respondsToSelector:@selector(view:tapLink:)]) {
-            [_delegate view:self tapLink:linkData];
+        if (_delegate && [_delegate respondsToSelector:@selector(label:tapLink:)]) {
+            [_delegate label:self tapLink:linkData];
         } else {
             NSURL *url = nil;
             if ([linkData isKindOfClass:[NSString class]]) {
@@ -823,20 +823,20 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() {
         if (contains) {
             BOOL isResonseImageTap = NO;
             
-            if ([self.delegate respondsToSelector:@selector(tapImage:)]) {
+            if ([self.delegate respondsToSelector:@selector(label:tapImage:)]) {
                 for (ContainerHandle *container in _containerArray) {
                     if (container.tag == [_imageRectDic[rectString] integerValue] && [container.containerType isKindOfClass:[UIImage class]]) {
-                        [self.delegate tapImage:(UIImage *)container.containerType];
+                        [self.delegate label:self tapImage:(UIImage *)container.containerType];
                         isResonseImageTap = YES;
                         break;
                     }
                 }
             }
             if (!isResonseImageTap) {
-                if ([self.delegate respondsToSelector:@selector(tapView:)]) {
+                if ([self.delegate respondsToSelector:@selector(label:tapView:)]) {
                     for (ContainerHandle *container in _containerArray) {
                         if (container.tag == [_imageRectDic[rectString] integerValue] && [container.containerType isKindOfClass:[UIView class]]) {
-                            [self.delegate tapView:container.containerType];
+                            [self.delegate label:self tapView:container.containerType];
                             break;
                         }
                     }
@@ -921,12 +921,10 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() {
 }
 
 - (void)resetFont {
-    CTFontRef fontRef = CTFontCreateWithName((CFStringRef)self.font.fontName, self.font.pointSize, NULL);
-    if (fontRef) {
-        _fontAscent = CTFontGetAscent(fontRef);
-        _fontDescent = CTFontGetDescent(fontRef);
-        _fontHeight = CTFontGetSize(fontRef);
-        CFRelease(fontRef);
+    if (self.font) {
+        _fontAscent = self.font.ascender;
+        _fontDescent = self.font.descender;
+        _fontHeight = self.font.lineHeight;
     }
 }
 

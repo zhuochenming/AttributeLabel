@@ -1,36 +1,36 @@
 //
-//  CTView.h
-//  CTView
+//  AttributeLabel.h
+//  AttributeLabel
 //
 //  Created by Zhuochenming on 16/6/20.
 //  Copyright © 2016年 Zhuochenming. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import "CTViewProtocol.h"
+#import "AttributeLabelProtocol.h"
 
 #import "ContainerHandle.h"
 #import "LinkTextHandle.h"
 
 #import "NSMutableAttributedString+CoreText.h"
 
-@class CTView;
+@class AttributeLabel;
 
-@protocol CTViewDelegate <NSObject>
+@protocol AttributeLabelDelegate <NSObject>
 
 @optional
 
-- (void)view:(CTView *)view tapLink:(id)linkData;
+- (void)label:(AttributeLabel *)label tapLink:(id)linkData;
 
-- (void)tapView:(UIView *)view;
+- (void)label:(AttributeLabel *)label tapView:(UIView *)view;
 
-- (void)tapImage:(UIImage *)image;
+- (void)label:(AttributeLabel *)label tapImage:(UIImage *)image;
 
 @end
 
-@interface CTView : UIView
+@interface AttributeLabel : UIView
 
-@property (nonatomic, weak) id<CTViewDelegate> delegate;
+@property (nonatomic, weak) id<AttributeLabelDelegate> delegate;
 //普通文本
 @property (nonatomic, copy) NSString *text;
 //属性文本
@@ -74,7 +74,7 @@
 
 @property (nonatomic, strong, readonly) NSArray *viewArray;
 
-//设置全局的自定义Link检测Block(详见CTViewURL)
+//设置全局的自定义Link检测Block(详见AttributeLabelURL)
 + (void)setCustomDetectMethod:(zCustomDetectLinkBlock)block;
 
 //添加文本

@@ -1,6 +1,6 @@
 //
 //  NSMutableAttributedString+CoreText.m
-//  CTView
+//  AttributeLabel
 //
 //  Created by Zhuochenming on 16/6/20.
 //  Copyright © 2016年 Zhuochenming. All rights reserved.
@@ -26,11 +26,7 @@
 - (void)kCTFont:(UIFont *)font range:(NSRange)range {
     if (font) {
         [self removeAttribute:(NSString *)kCTFontAttributeName range:range];
-        CTFontRef fontRef = CTFontCreateWithName((CFStringRef)font.fontName, font.pointSize, nil);
-        if (fontRef != nil) {
-            [self addAttribute:(NSString *)kCTFontAttributeName value:(__bridge id)fontRef range:range];
-            CFRelease(fontRef);
-        }
+        [self addAttribute:NSFontAttributeName value:font range:range];
     }
 }
 

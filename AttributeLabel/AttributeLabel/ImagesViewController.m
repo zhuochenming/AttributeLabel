@@ -1,16 +1,16 @@
 //
 //  ImagesViewController.m
-//  CTView
+//  AttributeLabel
 //
 //  Created by Zhuochenming on 16/6/20.
 //  Copyright © 2016年 Zhuochenming. All rights reserved.
 //
 
 #import "ImagesViewController.h"
-#import "CTView.h"
+#import "AttributeLabel.h"
 #import "UnderlineTextField.h"
 
-@interface ImagesViewController ()<CTViewDelegate>
+@interface ImagesViewController ()<AttributeLabelDelegate>
 
 @end
 
@@ -24,8 +24,9 @@
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:scrollView];
     
-    CTView *label = [[CTView alloc] initWithFrame:CGRectZero];
-    label.backgroundColor = [UIColor lightGrayColor];
+    AttributeLabel *label = [[AttributeLabel alloc] initWithFrame:CGRectZero];
+    CGFloat color = 244 / 255.0;
+    label.backgroundColor = [UIColor colorWithRed:color green:color blue:color alpha:1];
     label.delegate = self;
     label.lineSpacing = 5.0;
 
@@ -72,7 +73,7 @@
     [label appendImage:[UIImage imageNamed:@"hot"] size:CGSizeMake(100, 100) edge:UIEdgeInsetsMake(10, 100, 10, 100) alignment:kImageVerticalAlignmentTop];
     [label appendText:@"竹扇轻摇，轻舞心怡，是这个傍晚最真实的奢望，晚风拂柔，沐浴满院暖绪浅思的耳鬓厮磨，浓情暮意潜过心间，吹皱那湾深隐春潭。"];
     
-//    CTView *lable = [[CTView alloc] initWithFrame:CGRectZero];
+//    AttributeLabel *lable = [[AttributeLabel alloc] initWithFrame:CGRectZero];
 //    lable.delegate = self;
 //    lable.lineSpacing = 5.0;
 //    lable.backgroundColor = [UIColor whiteColor];
@@ -85,11 +86,11 @@
     scrollView.contentSize = CGSizeMake(self.view.frame.size.width, label.frame.size.height + 20);
 }
 
-- (void)tapView:(UIView *)view {
+- (void)label:(AttributeLabel *)label tapView:(UIView *)view {
     NSLog(@"view");
 }
 
-- (void)tapImage:(UIImage *)image {
+- (void)label:(AttributeLabel *)label tapImage:(UIImage *)image {
     NSLog(@"image");
 }
 

@@ -1,13 +1,13 @@
 //
 //  RichTextProtocol.h
-//  CTView
+//  AttributeLabel
 //
 //  Created by Zhuochenming on 16/6/20.
 //  Copyright © 2016年 Zhuochenming. All rights reserved.
 //
 
-#ifndef CTView_CTViewDefines_h
-#define CTView_CTViewDefines_h
+#ifndef AttributeLabel_AttributeLabelDefines_h
+#define AttributeLabel_AttributeLabelDefines_h
 
 //图片在文字中垂直方向的对齐方式
 typedef NS_ENUM (NSUInteger, kImageVerticalAlignment) {

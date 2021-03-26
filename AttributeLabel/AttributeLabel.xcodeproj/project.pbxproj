@@ -13,9 +13,7 @@
 		4FFD18461D1BB00F006CE188 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FFD18441D1BB00F006CE188 /* Main.storyboard */; };
 		4FFD18481D1BB00F006CE188 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FFD18471D1BB00F006CE188 /* Assets.xcassets */; };
 		4FFD184B1D1BB00F006CE188 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FFD18491D1BB00F006CE188 /* LaunchScreen.storyboard */; };
-		4FFD18561D1BB00F006CE188 /* SimpleAttributeLableTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD18551D1BB00F006CE188 /* SimpleAttributeLableTests.m */; };
-		4FFD18611D1BB00F006CE188 /* SimpleAttributeLableUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD18601D1BB00F006CE188 /* SimpleAttributeLableUITests.m */; };
-		4FFD18791D1BB09C006CE188 /* CTView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD18711D1BB09C006CE188 /* CTView.m */; };
+		4FFD18791D1BB09C006CE188 /* AttributeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD18711D1BB09C006CE188 /* AttributeLabel.m */; };
 		4FFD187A1D1BB09C006CE188 /* ContainerHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD18731D1BB09C006CE188 /* ContainerHandle.m */; };
 		4FFD187B1D1BB09C006CE188 /* LinkTextHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD18751D1BB09C006CE188 /* LinkTextHandle.m */; };
 		4FFD187C1D1BB09C006CE188 /* NSMutableAttributedString+CoreText.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD18771D1BB09C006CE188 /* NSMutableAttributedString+CoreText.m */; };
@@ -24,26 +22,9 @@
 		4FFD18841D1BB122006CE188 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FFD18831D1BB122006CE188 /* CoreText.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		4FFD18521D1BB00F006CE188 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4FFD182D1D1BB00F006CE188 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4FFD18341D1BB00F006CE188;
-			remoteInfo = SimpleAttributeLable;
-		};
-		4FFD185D1D1BB00F006CE188 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4FFD182D1D1BB00F006CE188 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4FFD18341D1BB00F006CE188;
-			remoteInfo = SimpleAttributeLable;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		4F79E4FC1D226DC7002FFD99 /* hot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hot.png; sourceTree = "<group>"; };
-		4FFD18351D1BB00F006CE188 /* SimpleAttributeLable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleAttributeLable.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FFD18351D1BB00F006CE188 /* AttributeLabel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AttributeLabel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FFD18391D1BB00F006CE188 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4FFD183B1D1BB00F006CE188 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4FFD183C1D1BB00F006CE188 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -51,21 +32,15 @@
 		4FFD18471D1BB00F006CE188 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4FFD184A1D1BB00F006CE188 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4FFD184C1D1BB00F006CE188 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4FFD18511D1BB00F006CE188 /* SimpleAttributeLableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleAttributeLableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4FFD18551D1BB00F006CE188 /* SimpleAttributeLableTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleAttributeLableTests.m; sourceTree = "<group>"; };
-		4FFD18571D1BB00F006CE188 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4FFD185C1D1BB00F006CE188 /* SimpleAttributeLableUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleAttributeLableUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4FFD18601D1BB00F006CE188 /* SimpleAttributeLableUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleAttributeLableUITests.m; sourceTree = "<group>"; };
-		4FFD18621D1BB00F006CE188 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4FFD18701D1BB09C006CE188 /* CTView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTView.h; sourceTree = "<group>"; };
-		4FFD18711D1BB09C006CE188 /* CTView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTView.m; sourceTree = "<group>"; };
+		4FFD18701D1BB09C006CE188 /* AttributeLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributeLabel.h; sourceTree = "<group>"; };
+		4FFD18711D1BB09C006CE188 /* AttributeLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributeLabel.m; sourceTree = "<group>"; };
 		4FFD18721D1BB09C006CE188 /* ContainerHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerHandle.h; sourceTree = "<group>"; };
 		4FFD18731D1BB09C006CE188 /* ContainerHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerHandle.m; sourceTree = "<group>"; };
 		4FFD18741D1BB09C006CE188 /* LinkTextHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkTextHandle.h; sourceTree = "<group>"; };
 		4FFD18751D1BB09C006CE188 /* LinkTextHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkTextHandle.m; sourceTree = "<group>"; };
 		4FFD18761D1BB09C006CE188 /* NSMutableAttributedString+CoreText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+CoreText.h"; sourceTree = "<group>"; };
 		4FFD18771D1BB09C006CE188 /* NSMutableAttributedString+CoreText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+CoreText.m"; sourceTree = "<group>"; };
-		4FFD18781D1BB09C006CE188 /* CTViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTViewProtocol.h; sourceTree = "<group>"; };
+		4FFD18781D1BB09C006CE188 /* AttributeLabelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributeLabelProtocol.h; sourceTree = "<group>"; };
 		4FFD187D1D1BB0A3006CE188 /* UnderlineTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnderlineTextField.h; sourceTree = "<group>"; };
 		4FFD187E1D1BB0A3006CE188 /* UnderlineTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnderlineTextField.m; sourceTree = "<group>"; };
 		4FFD18801D1BB0AA006CE188 /* ImagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagesViewController.h; sourceTree = "<group>"; };
@@ -82,20 +57,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4FFD184E1D1BB00F006CE188 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4FFD18591D1BB00F006CE188 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -103,9 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				4FFD18831D1BB122006CE188 /* CoreText.framework */,
-				4FFD18371D1BB00F006CE188 /* SimpleAttributeLable */,
-				4FFD18541D1BB00F006CE188 /* SimpleAttributeLableTests */,
-				4FFD185F1D1BB00F006CE188 /* SimpleAttributeLableUITests */,
+				4FFD18371D1BB00F006CE188 /* AttributeLabel */,
 				4FFD18361D1BB00F006CE188 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -113,14 +72,12 @@
 		4FFD18361D1BB00F006CE188 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4FFD18351D1BB00F006CE188 /* SimpleAttributeLable.app */,
-				4FFD18511D1BB00F006CE188 /* SimpleAttributeLableTests.xctest */,
-				4FFD185C1D1BB00F006CE188 /* SimpleAttributeLableUITests.xctest */,
+				4FFD18351D1BB00F006CE188 /* AttributeLabel.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4FFD18371D1BB00F006CE188 /* SimpleAttributeLable */ = {
+		4FFD18371D1BB00F006CE188 /* AttributeLabel */ = {
 			isa = PBXGroup;
 			children = (
 				4FFD183B1D1BB00F006CE188 /* AppDelegate.h */,
@@ -130,14 +87,14 @@
 				4FFD18811D1BB0AA006CE188 /* ImagesViewController.m */,
 				4FFD187D1D1BB0A3006CE188 /* UnderlineTextField.h */,
 				4FFD187E1D1BB0A3006CE188 /* UnderlineTextField.m */,
-				4FFD186F1D1BB08C006CE188 /* CTView */,
+				4FFD186F1D1BB08C006CE188 /* AttributeLabel */,
 				4FFD18441D1BB00F006CE188 /* Main.storyboard */,
 				4FFD18471D1BB00F006CE188 /* Assets.xcassets */,
 				4FFD18491D1BB00F006CE188 /* LaunchScreen.storyboard */,
 				4FFD184C1D1BB00F006CE188 /* Info.plist */,
 				4FFD18381D1BB00F006CE188 /* Supporting Files */,
 			);
-			path = SimpleAttributeLable;
+			path = AttributeLabel;
 			sourceTree = "<group>";
 		};
 		4FFD18381D1BB00F006CE188 /* Supporting Files */ = {
@@ -148,30 +105,12 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		4FFD18541D1BB00F006CE188 /* SimpleAttributeLableTests */ = {
+		4FFD186F1D1BB08C006CE188 /* AttributeLabel */ = {
 			isa = PBXGroup;
 			children = (
-				4FFD18551D1BB00F006CE188 /* SimpleAttributeLableTests.m */,
-				4FFD18571D1BB00F006CE188 /* Info.plist */,
-			);
-			path = SimpleAttributeLableTests;
-			sourceTree = "<group>";
-		};
-		4FFD185F1D1BB00F006CE188 /* SimpleAttributeLableUITests */ = {
-			isa = PBXGroup;
-			children = (
-				4FFD18601D1BB00F006CE188 /* SimpleAttributeLableUITests.m */,
-				4FFD18621D1BB00F006CE188 /* Info.plist */,
-			);
-			path = SimpleAttributeLableUITests;
-			sourceTree = "<group>";
-		};
-		4FFD186F1D1BB08C006CE188 /* CTView */ = {
-			isa = PBXGroup;
-			children = (
-				4FFD18781D1BB09C006CE188 /* CTViewProtocol.h */,
-				4FFD18701D1BB09C006CE188 /* CTView.h */,
-				4FFD18711D1BB09C006CE188 /* CTView.m */,
+				4FFD18781D1BB09C006CE188 /* AttributeLabelProtocol.h */,
+				4FFD18701D1BB09C006CE188 /* AttributeLabel.h */,
+				4FFD18711D1BB09C006CE188 /* AttributeLabel.m */,
 				4FFD18721D1BB09C006CE188 /* ContainerHandle.h */,
 				4FFD18731D1BB09C006CE188 /* ContainerHandle.m */,
 				4FFD18741D1BB09C006CE188 /* LinkTextHandle.h */,
@@ -179,15 +118,15 @@
 				4FFD18761D1BB09C006CE188 /* NSMutableAttributedString+CoreText.h */,
 				4FFD18771D1BB09C006CE188 /* NSMutableAttributedString+CoreText.m */,
 			);
-			path = CTView;
+			path = AttributeLabel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4FFD18341D1BB00F006CE188 /* SimpleAttributeLable */ = {
+		4FFD18341D1BB00F006CE188 /* AttributeLabel */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4FFD18651D1BB00F006CE188 /* Build configuration list for PBXNativeTarget "SimpleAttributeLable" */;
+			buildConfigurationList = 4FFD18651D1BB00F006CE188 /* Build configuration list for PBXNativeTarget "AttributeLabel" */;
 			buildPhases = (
 				4FFD18311D1BB00F006CE188 /* Sources */,
 				4FFD18331D1BB00F006CE188 /* Resources */,
@@ -197,46 +136,10 @@
 			);
 			dependencies = (
 			);
-			name = SimpleAttributeLable;
+			name = AttributeLabel;
 			productName = SimpleAttributeLable;
-			productReference = 4FFD18351D1BB00F006CE188 /* SimpleAttributeLable.app */;
+			productReference = 4FFD18351D1BB00F006CE188 /* AttributeLabel.app */;
 			productType = "com.apple.product-type.application";
-		};
-		4FFD18501D1BB00F006CE188 /* SimpleAttributeLableTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4FFD18681D1BB00F006CE188 /* Build configuration list for PBXNativeTarget "SimpleAttributeLableTests" */;
-			buildPhases = (
-				4FFD184D1D1BB00F006CE188 /* Sources */,
-				4FFD184E1D1BB00F006CE188 /* Frameworks */,
-				4FFD184F1D1BB00F006CE188 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4FFD18531D1BB00F006CE188 /* PBXTargetDependency */,
-			);
-			name = SimpleAttributeLableTests;
-			productName = SimpleAttributeLableTests;
-			productReference = 4FFD18511D1BB00F006CE188 /* SimpleAttributeLableTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		4FFD185B1D1BB00F006CE188 /* SimpleAttributeLableUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4FFD186B1D1BB00F006CE188 /* Build configuration list for PBXNativeTarget "SimpleAttributeLableUITests" */;
-			buildPhases = (
-				4FFD18581D1BB00F006CE188 /* Sources */,
-				4FFD18591D1BB00F006CE188 /* Frameworks */,
-				4FFD185A1D1BB00F006CE188 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4FFD185E1D1BB00F006CE188 /* PBXTargetDependency */,
-			);
-			name = SimpleAttributeLableUITests;
-			productName = SimpleAttributeLableUITests;
-			productReference = 4FFD185C1D1BB00F006CE188 /* SimpleAttributeLableUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -244,23 +147,15 @@
 		4FFD182D1D1BB00F006CE188 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1210;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = zhuochenming;
 				TargetAttributes = {
 					4FFD18341D1BB00F006CE188 = {
 						CreatedOnToolsVersion = 7.2;
 					};
-					4FFD18501D1BB00F006CE188 = {
-						CreatedOnToolsVersion = 7.2;
-						TestTargetID = 4FFD18341D1BB00F006CE188;
-					};
-					4FFD185B1D1BB00F006CE188 = {
-						CreatedOnToolsVersion = 7.2;
-						TestTargetID = 4FFD18341D1BB00F006CE188;
-					};
 				};
 			};
-			buildConfigurationList = 4FFD18301D1BB00F006CE188 /* Build configuration list for PBXProject "SimpleAttributeLable" */;
+			buildConfigurationList = 4FFD18301D1BB00F006CE188 /* Build configuration list for PBXProject "AttributeLabel" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -273,9 +168,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4FFD18341D1BB00F006CE188 /* SimpleAttributeLable */,
-				4FFD18501D1BB00F006CE188 /* SimpleAttributeLableTests */,
-				4FFD185B1D1BB00F006CE188 /* SimpleAttributeLableUITests */,
+				4FFD18341D1BB00F006CE188 /* AttributeLabel */,
 			);
 		};
 /* End PBXProject section */
@@ -292,20 +185,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4FFD184F1D1BB00F006CE188 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4FFD185A1D1BB00F006CE188 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -315,7 +194,7 @@
 			files = (
 				4FFD187C1D1BB09C006CE188 /* NSMutableAttributedString+CoreText.m in Sources */,
 				4FFD183D1D1BB00F006CE188 /* AppDelegate.m in Sources */,
-				4FFD18791D1BB09C006CE188 /* CTView.m in Sources */,
+				4FFD18791D1BB09C006CE188 /* AttributeLabel.m in Sources */,
 				4FFD183A1D1BB00F006CE188 /* main.m in Sources */,
 				4FFD187F1D1BB0A3006CE188 /* UnderlineTextField.m in Sources */,
 				4FFD187B1D1BB09C006CE188 /* LinkTextHandle.m in Sources */,
@@ -324,36 +203,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4FFD184D1D1BB00F006CE188 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4FFD18561D1BB00F006CE188 /* SimpleAttributeLableTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4FFD18581D1BB00F006CE188 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4FFD18611D1BB00F006CE188 /* SimpleAttributeLableUITests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		4FFD18531D1BB00F006CE188 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4FFD18341D1BB00F006CE188 /* SimpleAttributeLable */;
-			targetProxy = 4FFD18521D1BB00F006CE188 /* PBXContainerItemProxy */;
-		};
-		4FFD185E1D1BB00F006CE188 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4FFD18341D1BB00F006CE188 /* SimpleAttributeLable */;
-			targetProxy = 4FFD185D1D1BB00F006CE188 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4FFD18441D1BB00F006CE188 /* Main.storyboard */ = {
@@ -483,10 +333,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = SimpleAttributeLable/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				INFOPLIST_FILE = AttributeLabel/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = www.zhuochenming.com.SimpleAttributeLable;
+				PRODUCT_BUNDLE_IDENTIFIER = www.zhuochenming.com.AttributeLabel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -495,66 +345,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = SimpleAttributeLable/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				INFOPLIST_FILE = AttributeLabel/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = www.zhuochenming.com.SimpleAttributeLable;
+				PRODUCT_BUNDLE_IDENTIFIER = www.zhuochenming.com.AttributeLabel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		4FFD18691D1BB00F006CE188 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = SimpleAttributeLableTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = www.zhuochenming.com.SimpleAttributeLableTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimpleAttributeLable.app/SimpleAttributeLable";
-			};
-			name = Debug;
-		};
-		4FFD186A1D1BB00F006CE188 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = SimpleAttributeLableTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = www.zhuochenming.com.SimpleAttributeLableTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimpleAttributeLable.app/SimpleAttributeLable";
-			};
-			name = Release;
-		};
-		4FFD186C1D1BB00F006CE188 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = SimpleAttributeLableUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = www.zhuochenming.com.SimpleAttributeLableUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = SimpleAttributeLable;
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		4FFD186D1D1BB00F006CE188 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = SimpleAttributeLableUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = www.zhuochenming.com.SimpleAttributeLableUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = SimpleAttributeLable;
-				USES_XCTRUNNER = YES;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4FFD18301D1BB00F006CE188 /* Build configuration list for PBXProject "SimpleAttributeLable" */ = {
+		4FFD18301D1BB00F006CE188 /* Build configuration list for PBXProject "AttributeLabel" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4FFD18631D1BB00F006CE188 /* Debug */,
@@ -563,29 +365,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4FFD18651D1BB00F006CE188 /* Build configuration list for PBXNativeTarget "SimpleAttributeLable" */ = {
+		4FFD18651D1BB00F006CE188 /* Build configuration list for PBXNativeTarget "AttributeLabel" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4FFD18661D1BB00F006CE188 /* Debug */,
 				4FFD18671D1BB00F006CE188 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4FFD18681D1BB00F006CE188 /* Build configuration list for PBXNativeTarget "SimpleAttributeLableTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4FFD18691D1BB00F006CE188 /* Debug */,
-				4FFD186A1D1BB00F006CE188 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4FFD186B1D1BB00F006CE188 /* Build configuration list for PBXNativeTarget "SimpleAttributeLableUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4FFD186C1D1BB00F006CE188 /* Debug */,
-				4FFD186D1D1BB00F006CE188 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

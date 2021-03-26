@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:SimpleAttributeLable.xcodeproj">
+      location = "self:/Users/zhuochenming/Desktop/AttributeLabel/AttributeLabel/AttributeLabel.xcodeproj">
    </FileRef>
 </Workspace>

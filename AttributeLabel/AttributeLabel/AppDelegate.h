@@ -1,6 +1,6 @@
 //
 //  AppDelegate.h
-//  CTView
+//  AttributeLabel
 //
 //  Created by Zhuochenming on 16/6/20.
 //  Copyright © 2016年 Zhuochenming. All rights reserved.
@@ -10,7 +10,7 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) UIWindow * _Nonnull window;
 @property (nullable, nonatomic, copy) NSNumber *maxGetCount;
 @property (nullable, nonatomic, copy) NSNumber *gotCount;
 

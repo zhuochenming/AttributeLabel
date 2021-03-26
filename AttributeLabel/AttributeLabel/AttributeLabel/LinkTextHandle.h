@@ -1,13 +1,13 @@
 //
 //  LinkTextHandle.h
-//  CTView
+//  AttributeLabel
 //
 //  Created by Zhuochenming on 16/6/20.
 //  Copyright © 2016年 Zhuochenming. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import "CTViewProtocol.h"
+#import "AttributeLabelProtocol.h"
 
 @interface LinkTextHandle : NSObject
 
