@@ -409,11 +409,11 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() {
 }
 
 #pragma mark - 添加链接
-- (void)addCustomLink:(id)linkData range:(NSRange)range {
-    [self addCustomLink:linkData range:range linkColor:self.linkColor];
+- (void)addLink:(id)linkData range:(NSRange)range {
+    [self addLink:linkData range:range linkColor:self.linkColor];
 }
 
-- (void)addCustomLink:(id)linkData range:(NSRange)range linkColor:(UIColor *)color {
+- (void)addLink:(id)linkData range:(NSRange)range linkColor:(UIColor *)color {
     LinkTextHandle *linkText = [LinkTextHandle urlWithLinkData:linkData range:range color:color];
     [_linkTextArray addObject:linkText];
     [self resetTextFrame];
@@ -806,7 +806,7 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() {
             return;
         }
     }
-    [self addCustomLink:link.linkData range:link.range];
+    [self addLink:link.linkData range:link.range];
 }
 
 #pragma mark - 点击事件相应

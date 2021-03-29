@@ -92,8 +92,8 @@
 - (void)appendView:(UIView *)view edge:(UIEdgeInsets)edge alignment:(kImageVerticalAlignment)alignment;
 
 //添加自定义链接
-- (void)addCustomLink:(id)linkData range:(NSRange)range;
-- (void)addCustomLink:(id)linkData range:(NSRange)range linkColor:(UIColor *)color;
+- (void)addLink:(id)linkData range:(NSRange)range;
+- (void)addLink:(id)linkData range:(NSRange)range linkColor:(UIColor *)color;
 
 //获取富文本的高度
 - (CGFloat)getHeightWithWidth:(CGFloat)width;
